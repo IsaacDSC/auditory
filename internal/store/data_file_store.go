@@ -27,12 +27,12 @@ func (fp FilePath) String() string {
 }
 
 type DataFileStore struct {
-	mu mu.FileMutexByKey
+	mu mu.MutexByKey
 }
 
 func NewDataFileStore() *DataFileStore {
 	return &DataFileStore{
-		mu: make(mu.FileMutexByKey),
+		mu: make(mu.MutexByKey),
 	}
 }
 

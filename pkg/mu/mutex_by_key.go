@@ -2,12 +2,12 @@ package mu
 
 import "sync"
 
-type FileMutexByKey map[string]*sync.RWMutex
+type MutexByKey map[string]*sync.RWMutex
 
-func (fmkb FileMutexByKey) GetOrCreate(key string) *sync.RWMutex {
-	if _, ok := fmkb[key]; !ok {
-		fmkb[key] = &sync.RWMutex{}
+func (mbk MutexByKey) GetOrCreate(key string) *sync.RWMutex {
+	if _, ok := mbk[key]; !ok {
+		mbk[key] = &sync.RWMutex{}
 	}
 
-	return fmkb[key]
+	return mbk[key]
 }
