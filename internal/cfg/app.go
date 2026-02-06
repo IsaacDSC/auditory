@@ -21,6 +21,7 @@ type AppConfig struct {
 	ReadHeaderTimeout time.Duration `env:"READ_HEADER_TIMEOUT" env-default:"1s"`
 	WriteTimeout      time.Duration `env:"WRITE_TIMEOUT" env-default:"30s"`
 	IdleTimeout       time.Duration `env:"IDLE_TIMEOUT" env-default:"60s"`
+	ReplacedAudit     string        `env:"REPLACED_AUDIT" env-default:"[REDACTED]"`
 }
 
 type BucketConfig struct {

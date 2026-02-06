@@ -47,3 +47,6 @@ internal/
 ├── cfg/               # Configuração da aplicação
 └── store/             # Persistência (file + S3)
 ```
+
+
+<!-- Melhorar a governança -->

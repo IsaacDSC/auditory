@@ -12,12 +12,13 @@ import (
 )
 
 type InputAudit struct {
-	Method     string
-	Path       string
-	Query      string
-	Headers    http.Header
-	Body       []byte
-	StatusCode int
+	Method         string
+	Path           string
+	Query          string
+	Headers        http.Header
+	Body           []byte
+	StatusCode     int
+	RequestHeaders http.Header // Headers do request original (usado na response)
 }
 
 type AuditorFn func(ctx context.Context, input InputAudit) error
@@ -91,9 +92,10 @@ func (ap *AuditProxy) modifyResponse(resp *http.Response) error {
 
 	ctx := resp.Request.Context()
 	if err := ap.responseCallback(ctx, InputAudit{
-		Headers:    resp.Header,
-		Body:       body,
-		StatusCode: resp.StatusCode,
+		Headers:        resp.Header,
+		Body:           body,
+		StatusCode:     resp.StatusCode,
+		RequestHeaders: resp.Request.Header,
 	}); err != nil {
 		log.Printf("audit error: %v", err)
 	}

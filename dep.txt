@@ -1,0 +1,19 @@
+go list -f '{{.ImportPath}} -> {{join .Imports " "}}' ./...
+
+github.com/IsaacDSC/auditory -> fmt net/url
+github.com/IsaacDSC/auditory/cmd/control-plane -> context errors github.com/IsaacDSC/auditory/cmd/control-plane/internal/handle github.com/IsaacDSC/auditory/cmd/control-plane/internal/tasks github.com/IsaacDSC/auditory/internal/backup github.com/IsaacDSC/auditory/internal/cfg github.com/IsaacDSC/auditory/internal/store log net/http os os/signal syscall time
+github.com/IsaacDSC/auditory/cmd/control-plane/internal/handle -> context encoding/json fmt github.com/IsaacDSC/auditory/internal/audit github.com/IsaacDSC/auditory/internal/backup net/http
+github.com/IsaacDSC/auditory/cmd/control-plane/internal/handle/mocks -> context github.com/IsaacDSC/auditory/internal/audit go.uber.org/mock/gomock reflect
+github.com/IsaacDSC/auditory/cmd/control-plane/internal/tasks -> context fmt github.com/IsaacDSC/auditory/pkg/clock log time
+github.com/IsaacDSC/auditory/cmd/data-plane -> github.com/IsaacDSC/auditory/cmd/data-plane/internal/handle github.com/IsaacDSC/auditory/cmd/data-plane/internal/proxy github.com/IsaacDSC/auditory/internal/backup github.com/IsaacDSC/auditory/internal/store log net/http net/url os
+github.com/IsaacDSC/auditory/cmd/data-plane/internal/handle -> context github.com/IsaacDSC/auditory/cmd/data-plane/internal/proxy github.com/IsaacDSC/auditory/internal/audit
+github.com/IsaacDSC/auditory/cmd/data-plane/internal/proxy -> bytes context io log net/http net/http/httputil net/url time
+github.com/IsaacDSC/auditory/internal/audit -> fmt time
+github.com/IsaacDSC/auditory/internal/backup -> context encoding/json fmt github.com/IsaacDSC/auditory/internal/audit github.com/IsaacDSC/auditory/internal/cfg github.com/IsaacDSC/auditory/internal/store github.com/IsaacDSC/auditory/pkg/clock github.com/IsaacDSC/auditory/pkg/ctxkey github.com/IsaacDSC/auditory/pkg/mu log net/url slices strings time
+github.com/IsaacDSC/auditory/internal/backup/mocks -> context github.com/IsaacDSC/auditory/internal/audit github.com/IsaacDSC/auditory/internal/store go.uber.org/mock/gomock reflect time
+github.com/IsaacDSC/auditory/internal/cfg -> github.com/ilyakaznacheev/cleanenv log sync time
+github.com/IsaacDSC/auditory/internal/store -> bytes context encoding/json errors fmt github.com/IsaacDSC/auditory/internal/audit github.com/IsaacDSC/auditory/internal/cfg github.com/IsaacDSC/auditory/pkg/clock github.com/IsaacDSC/auditory/pkg/mu github.com/aws/aws-sdk-go-v2/aws github.com/aws/aws-sdk-go-v2/config github.com/aws/aws-sdk-go-v2/credentials github.com/aws/aws-sdk-go-v2/service/s3 io os sort strings sync time
+github.com/IsaacDSC/auditory/internal/store/mocks -> context github.com/aws/aws-sdk-go-v2/service/s3 go.uber.org/mock/gomock reflect
+github.com/IsaacDSC/auditory/pkg/clock -> time
+github.com/IsaacDSC/auditory/pkg/ctxkey -> context
+github.com/IsaacDSC/auditory/pkg/mu -> sync

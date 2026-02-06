@@ -1,0 +1,1 @@
+go list -f '{{.ImportPath}} -> {{join .Imports " "}}' ./... >> dep.txt

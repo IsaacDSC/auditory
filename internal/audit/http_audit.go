@@ -14,7 +14,8 @@ type RequestAudit struct {
 }
 
 type ResponseAudit struct {
-	StatusCode int                 `json:"status_code"`
-	Headers    map[string][]string `json:"headers"`
-	Body       []byte              `json:"body"`
+	StatusCode     int                 `json:"status_code"`
+	Headers        map[string][]string `json:"headers"`
+	Body           []byte              `json:"body"`
+	RequestHeaders map[string][]string `json:"-"` // Headers do request original (não serializado)
 }

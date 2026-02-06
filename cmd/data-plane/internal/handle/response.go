@@ -14,9 +14,10 @@ type RespService interface {
 func Response(respService RespService) func(ctx context.Context, input proxy.InputAudit) error {
 	return func(ctx context.Context, input proxy.InputAudit) error {
 		return respService.EnqueueResponse(ctx, audit.ResponseAudit{
-			StatusCode: input.StatusCode,
-			Headers:    input.Headers,
-			Body:       input.Body,
+			StatusCode:     input.StatusCode,
+			Headers:        input.Headers,
+			Body:           input.Body,
+			RequestHeaders: input.RequestHeaders,
 		})
 	}
 }
